@@ -1,0 +1,54 @@
+﻿.next/types/validator.ts(171,31): error TS2344: Type 'typeof import("D:/Desktop/nextJS/AMA/src/app/api/conversation/[conversationId]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/conversation/[conversationId]">'.
+  Types of property 'GET' are incompatible.
+    Type '(req: Request, { params }: { params: { conversationId: string; }; }) => Promise<NextResponse<{ success: boolean; message: string; }> | NextResponse<{ success: boolean; messages: { _id: ObjectId; content: string; createdAt: Date; type: "message" | "reply"; conversationId: ObjectId | undefined; }[]; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ conversationId: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ conversationId: string; }>; }' is not assignable to type '{ params: { conversationId: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'conversationId' is missing in type 'Promise<{ conversationId: string; }>' but required in type '{ conversationId: string; }'.
+.next/types/validator.ts(260,39): error TS2306: File 'D:/Desktop/nextJS/AMA/src/app/api/suggest-messages/route.ts' is not a module.
+src/app/api/accept-messages/route.ts(12,42): error TS2345: Argument of type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to parameter of type 'GetServerSessionParams<GetServerSessionOptions>'.
+  Type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to type '[GetServerSessionOptions]'.
+    Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'GetServerSessionOptions'.
+      Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'Partial<Omit<AuthOptions, "callbacks">>'.
+        The types of 'session.strategy' are incompatible between these types.
+          Type 'string' is not assignable to type 'SessionStrategy | undefined'.
+src/app/api/accept-messages/route.ts(58,42): error TS2345: Argument of type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to parameter of type 'GetServerSessionParams<GetServerSessionOptions>'.
+  Type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to type '[GetServerSessionOptions]'.
+    Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'GetServerSessionOptions'.
+      Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'Partial<Omit<AuthOptions, "callbacks">>'.
+        The types of 'session.strategy' are incompatible between these types.
+          Type 'string' is not assignable to type 'SessionStrategy | undefined'.
+src/app/api/auth/[...nextauth]/options.ts(73,20): error TS7031: Binding element 'user' implicitly has an 'any' type.
+src/app/api/auth/[...nextauth]/options.ts(73,26): error TS7031: Binding element 'account' implicitly has an 'any' type.
+src/app/api/auth/[...nextauth]/options.ts(111,17): error TS7031: Binding element 'token' implicitly has an 'any' type.
+src/app/api/auth/[...nextauth]/options.ts(111,24): error TS7031: Binding element 'user' implicitly has an 'any' type.
+src/app/api/auth/[...nextauth]/options.ts(111,30): error TS7031: Binding element 'account' implicitly has an 'any' type.
+src/app/api/auth/[...nextauth]/options.ts(153,21): error TS7031: Binding element 'session' implicitly has an 'any' type.
+src/app/api/auth/[...nextauth]/options.ts(153,30): error TS7031: Binding element 'token' implicitly has an 'any' type.
+src/app/api/auth/[...nextauth]/route.ts(4,26): error TS2345: Argument of type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to parameter of type 'AuthOptions'.
+  The types of 'session.strategy' are incompatible between these types.
+    Type 'string' is not assignable to type 'SessionStrategy | undefined'.
+src/app/api/delete-message/[messageid]/route.ts(147,42): error TS2345: Argument of type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to parameter of type 'GetServerSessionParams<GetServerSessionOptions>'.
+  Type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to type '[GetServerSessionOptions]'.
+    Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'GetServerSessionOptions'.
+      Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'Partial<Omit<AuthOptions, "callbacks">>'.
+        The types of 'session.strategy' are incompatible between these types.
+          Type 'string' is not assignable to type 'SessionStrategy | undefined'.
+src/app/api/get-messages/route.ts(78,42): error TS2345: Argument of type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to parameter of type 'GetServerSessionParams<GetServerSessionOptions>'.
+  Type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to type '[GetServerSessionOptions]'.
+    Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'GetServerSessionOptions'.
+      Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'Partial<Omit<AuthOptions, "callbacks">>'.
+        The types of 'session.strategy' are incompatible between these types.
+          Type 'string' is not assignable to type 'SessionStrategy | undefined'.
+src/app/api/messages/reply/route.ts(13,48): error TS2345: Argument of type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to parameter of type 'GetServerSessionParams<GetServerSessionOptions>'.
+  Type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to type '[GetServerSessionOptions]'.
+    Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'GetServerSessionOptions'.
+      Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'Partial<Omit<AuthOptions, "callbacks">>'.
+        The types of 'session.strategy' are incompatible between these types.
+          Type 'string' is not assignable to type 'SessionStrategy | undefined'.
+src/app/api/session-check/route.ts(10,42): error TS2345: Argument of type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to parameter of type 'GetServerSessionParams<GetServerSessionOptions>'.
+  Type '[{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }]' is not assignable to type '[GetServerSessionOptions]'.
+    Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'GetServerSessionOptions'.
+      Type '{ session: { strategy: string; }; providers: (OAuthConfig<GoogleProfile> | CredentialsConfig<{ identifier: {}; password: {}; }>)[]; callbacks: { ...; }; secret: string | undefined; pages: { ...; }; }' is not assignable to type 'Partial<Omit<AuthOptions, "callbacks">>'.
+        The types of 'session.strategy' are incompatible between these types.
+          Type 'string' is not assignable to type 'SessionStrategy | undefined'.
