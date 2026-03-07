@@ -301,77 +301,107 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <main className="flex w-full min-h-screen overflow-hidden font-sans bg-background text-foreground">
+    <main className="min-h-screen w-full grid lg:grid-cols-2 bg-background text-foreground selection:bg-indigo-500/30">
 
-      {/* Left Section */}
-      <section className="hidden lg:flex w-1/2 bg-primary text-primary-foreground p-16 flex-col justify-between relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
-        <div className="relative z-10">
-          <div className="flex items-center gap-3 mb-20">
-            <div className="size-8 rounded-lg bg-white flex items-center justify-center text-primary shadow-sm">
-              <ShieldCheck size={18} />
+      {/* LEFT SIDE CONTENT */}
+      <section className="hidden lg:flex flex-col justify-between p-16 bg-zinc-950 text-white relative overflow-hidden">
+
+        {/* Animated Background Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-zinc-950 to-purple-950 opacity-80" />
+        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-indigo-600/20 blur-[120px] rounded-full mix-blend-screen" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 blur-[120px] rounded-full mix-blend-screen" />
+
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+
+        <div className="relative z-10 flex flex-col h-full justify-between">
+
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md shadow-2xl">
+              <ShieldCheck size={24} className="text-indigo-400" />
             </div>
-            <h2 className="text-xl font-bold uppercase">
-              Account Recovery
+            <h2 className="text-2xl font-bold tracking-tight bg-gradient-to-br from-white to-white/50 bg-clip-text text-transparent">
+              Secret Message
             </h2>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold uppercase leading-tight tracking-tight">
-            Set
-            <br />
-            New Password
-          </h1>
+          <div className="max-w-md my-auto">
+            <h1 className="text-5xl font-black mb-6 leading-[1.1] tracking-tight text-white">
+              Set New <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                Password.
+              </span>
+            </h1>
 
-          <p className="text-primary-foreground/70 mt-6 text-lg">
-            Create a new secure password to regain access to your account.
+            <p className="text-zinc-400 text-lg leading-relaxed mb-10">
+              Create a new secure password to regain access to your account and anonymous messages.
+            </p>
+          </div>
+
+          <p className="text-xs text-zinc-500 font-medium">
+            © {new Date().getFullYear()} Secret Message Network
           </p>
         </div>
+
       </section>
 
-      {/* Right Section */}
-      <section className="flex w-full lg:w-1/2 justify-center items-center px-6 md:px-20 selection:bg-primary/20 selection:text-primary">
+      {/* RIGHT SIDE FORM */}
+      <section className="flex items-center justify-center p-6 md:p-12 relative overflow-hidden bg-background">
 
-        <div className="w-full max-w-sm">
+        {/* Mobile ambient glow */}
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-indigo-500/5 via-transparent to-purple-500/5 lg:hidden" />
 
-          <h1 className="text-3xl font-bold uppercase tracking-tight mb-10 text-center lg:text-left">
-            Reset Password
-          </h1>
+        <div className="w-full max-w-[420px] relative z-10">
 
-          <form onSubmit={handleSubmit} className="space-y-8">
+          {/* HEADER */}
+          <div className="mb-10 text-center lg:text-left">
+            <div className="w-16 h-16 mx-auto lg:mx-0 bg-gradient-to-tr from-indigo-500 to-purple-600 text-white flex items-center justify-center rounded-2xl shadow-[0_0_40px_-10px_rgba(99,102,241,0.5)] mb-6 ring-1 ring-white/20">
+              <ShieldCheck size={32} className="drop-shadow-md" />
+            </div>
+
+            <h1 className="text-3xl font-black tracking-tight text-foreground">
+              Reset Password
+            </h1>
+
+            <p className="text-sm text-muted-foreground mt-3 font-medium">
+              Enter your new password below
+            </p>
+          </div>
+
+          {/* FORM */}
+          <form onSubmit={handleSubmit} className="space-y-5">
 
             {/* Token */}
             <div className="space-y-2">
-              <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+              <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 Reset Token
               </label>
-
               <input
                 value={token || ""}
                 disabled
-                className="w-full h-11 px-3 py-2 rounded-md border border-input bg-muted text-muted-foreground text-sm focus-visible:outline-none"
+                className="w-full h-12 px-4 rounded-xl border border-input bg-muted/50 text-muted-foreground text-sm focus-visible:outline-none shadow-sm cursor-not-allowed"
               />
             </div>
 
             {/* Password */}
             <div className="space-y-2">
-              <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+              <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 New Password
               </label>
-
               <input
                 type="password"
                 placeholder="••••••••"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full h-11 px-3 py-2 rounded-md border border-input bg-background/50 text-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:bg-background/80"
+                className="w-full h-12 px-4 rounded-xl border border-input bg-background text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 transition-all placeholder:text-muted-foreground/50 shadow-sm"
               />
             </div>
 
             {/* Button */}
             <button
               disabled={isSubmitting}
-              className="w-full h-12 rounded-md bg-primary text-primary-foreground font-bold text-sm uppercase tracking-widest flex items-center justify-center transition-all duration-200 hover:bg-primary/90 hover:shadow-md active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="w-full h-12 mt-4 rounded-xl bg-foreground text-background font-bold flex items-center justify-center transition-all hover:bg-foreground/90 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none shadow-lg"
             >
               {isSubmitting ? (
                 <Loader2 className="animate-spin" size={20} />
@@ -382,18 +412,17 @@ export default function ResetPasswordPage() {
 
           </form>
 
-          {/* Back to login */}
-          <div className="mt-10 pt-8 border-t border-border text-center">
+          {/* BACK LINK */}
+          <div className="mt-8 pt-8 border-t border-border text-center">
             <Link
               href="/sign-in"
-              className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-indigo-500 transition-colors inline-flex items-center gap-2"
             >
               ← Back to Login
             </Link>
           </div>
 
         </div>
-
       </section>
 
     </main>
